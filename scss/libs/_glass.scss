@@ -1,0 +1,80 @@
+@mixin animateFlash {
+    animation-name: flash;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 0.7s;
+}
+
+@mixin animateSpark($d:0) {
+    animation-name: spark;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-delay: $d;
+}
+
+.glass {
+    border: 4px solid rgb(31, 31, 31);
+    background-color: rgb(181, 228, 255);
+    opacity: 0.5;
+    border-radius: 50%; 
+    overflow: hidden;
+    transform: rotate(340deg);
+    @include size(70px);
+    .flash {
+        position: relative;
+        top: -4px;
+        width: 110%;
+        height: 110%;
+        opacity: 1;
+        @include animateFlash;
+    }
+}
+
+.spark {
+  @include size(30px);
+  opacity: 0.7;
+  @include animateSpark;
+}
+.spark_small {
+    @include size(20px);
+    opacity: 0.8;
+    @include animateSpark(0.3s);
+}
+
+@keyframes flash {
+    0%{
+        transform:translate(-100%, 20%);
+    }
+    50% {
+        transform:translate(100%, -20%);
+    }
+    51%{
+        transform:translate(-100%, 20%);
+    }
+    100%{
+        transform:translate(0,0);
+    }
+
+}
+
+@keyframes spark {
+    0%{
+        transform:scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    20%{
+        transform:scale(0.3);
+    }
+    30%{
+        transform: scale(1);
+    
+    }
+    100%{
+        transform: scale(1);
+    }
+}

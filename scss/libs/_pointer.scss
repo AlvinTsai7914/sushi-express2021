@@ -1,0 +1,35 @@
+@mixin animatePointer {
+    animation-name: pointer;
+    animation-duration: 0.5s;
+    // animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; 
+    // animation-delay: 1s;
+}
+
+.btn_box {
+    @include size(130px, 50px);
+    background: center center / cover url("../img/scene_1_button.svg")
+}
+
+.pointer {
+    @include size(30px);
+    border: 2px solid black;
+    background: center center / cover url("../img/pointer.svg");
+    position: relative;
+    right: -90%;
+    bottom: -90%;
+    transform: scale(0);
+    @include animatePointer;
+}
+
+@keyframes pointer {
+    0% {
+        transform: scale(1);
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-10px, -10px);
+    }
+
+}
