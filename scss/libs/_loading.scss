@@ -7,7 +7,7 @@
 
 @mixin animateLoadingFinished {
     animation-name: loadingFinished;
-    animation-duration: 1.5s;
+    animation-duration: 1.2s;
     animation-delay: 3s;
     animation-fill-mode: both;
 }
@@ -27,6 +27,13 @@
     animation-fill-mode: both;
 }
 
+@mixin animateRightToLeft(){
+    animation-name: rightToLeft;
+    animation-duration: 2s;
+    animation-delay: 4.7s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
 
 .loading_bar {
     border: 2px solid #fff;
@@ -44,7 +51,7 @@
 }
 
 .black_bg{
-    @include size(50%, 100%);
+    @include size(50%, 120vh);
     background-color: black;
     position: fixed;
     top:0;
@@ -58,12 +65,11 @@
         transform-origin: top left;
         @include animateOpeningRight;
     }
-    
 }
 
 .loading_wrapper {
     border: 2px solid white;
-    width: 70%;
+    width: 100%;
     position: relative;
     @include animateLoadingFinished;
     img {
@@ -74,6 +80,29 @@
         font-size: 42px;
         text-align: center;
         margin: 0 auto 30px;
+    }
+}
+
+.loading_front{
+    z-index: 150;
+}
+
+.loading_back {
+    position: absolute;
+    z-index: 100;
+    transform: scale(2.5);
+    .spark_box {
+        position: relative;
+        left: -10px;
+        top: 10px;
+        .spark_small {
+            position: relative;
+            top: 20px;
+            left: -10px;
+        }
+    }
+    .flash_wrapper {
+        @include animateRightToLeft();
     }
 }
 
@@ -110,13 +139,13 @@
     0% {
         transform: rotate(0);
     }
-    20% {
-        transform: rotate(15deg);
-        opacity: 0.7;
+    3% {
+        transform: rotate(20deg);
+        opacity: 0.8;
     }
-    60% {
-        transform: rotate(15deg);
-        opacity: 0.7;
+    50% {
+        transform: rotate(20deg);
+        opacity: 0.8;
      
     }
     100% {
@@ -129,17 +158,32 @@
     0% {
         transform: rotate(0);
     }
-    20% {
-        transform: rotate(-15deg);
+    3% {
+        transform: rotate(-20deg);
         opacity: 0.8;
     }
-    60% {
-        transform: rotate(-15deg);
+    50% {
+        transform: rotate(-20deg);
         opacity: 0.8;
     }
 
     100% {
         transform: rotate(-90deg);
         opacity: 0;
+    }
+}
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(500px);
+    }
+    5% {
+        transform: translateX(30px);
+    }
+    90% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(-500px);
     }
 }

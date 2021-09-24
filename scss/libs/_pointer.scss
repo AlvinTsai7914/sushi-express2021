@@ -8,13 +8,12 @@
 }
 
 .btn_box {
-    @include size(130px, 50px);
-    background: center center / cover url("../img/scene_1_button.svg")
+    @include size(150px, 50px);
+    @include animateOpacityTransition;
 }
 
 .pointer {
-    @include size(30px);
-    border: 2px solid black;
+    @include size(36px,30px);
     background: center center / cover url("../img/pointer.svg");
     position: relative;
     right: -90%;

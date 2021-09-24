@@ -1,0 +1,63 @@
+.intro_scene {
+    .main {
+        position: relative;
+        top: 5%;
+        .chat_bubble_1 {
+            @include size(100%, 70px);
+        }
+
+        .man {
+            @include size(257px, 330px);
+            position: relative;
+            margin: 0 auto;
+            background: center center / cover url("../img/scene_1_man.svg");
+            .glass_border{
+                position: relative;
+                top: 77px;
+                left: -1px;
+            }
+            .spark_box {
+                @include size(30px);
+                position: relative;
+                top: 90px;
+                left: -14px;
+                .spark_small {
+                    position: relative;
+                    top: 0;
+                    left: 20px;
+                }
+            }
+            .post_rising {
+                position: absolute;
+                top: 87px;
+                left: -34px;
+            }
+        }
+    }
+
+    .btn_box {
+        position: absolute;
+        width: 146px;
+        left: 150px;
+        bottom: 0px;
+        background: center center / cover url("../img/scene_1_button.svg")
+    }
+}
+
+// .post_wrapper {
+//     .post {
+//         width: 80%;
+//         height: 590px;
+//         background: center center / cover url("../img/scene_1_post_bg.svg");
+//         .content {
+//             width: 106%;
+//             padding-top: 50px;
+//         }
+//         .pointer {
+//             position: relative;
+//             bottom: 40px;
+//             right: -260px;
+        
+//         }
+//     }
+// }

@@ -1,8 +1,15 @@
+//動畫
 @import "libs/mixin";
-@import "libs/page";
-@import "libs/layout";
-// @import "libs/part";
+@import "libs/animation";
+@import "libs/loading";
+@import "libs/post_rising";
 @import "libs/chat_bubble";
 @import "libs/pointer";
 @import "libs/glass";
-@import "libs/loading";
+@import "libs/post";
+
+@import "libs/variable";
+@import "libs/page";
+@import "libs/layout";
+// @import "libs/part";
+

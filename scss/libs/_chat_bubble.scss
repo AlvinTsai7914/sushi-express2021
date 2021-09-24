@@ -1,26 +1,31 @@
-@mixin animateChatBuuble {
+@mixin animateChatBuuble($d:0s) {
     animation-name: chatBubble;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
     transform-origin: bottom center;
+    animation-delay: $d;
 }
 
-@mixin animateChatContent {
-    animation-name: chatContent;
-    animation-duration: 0.3s;
-    animation-delay: 0.3s;
-    animation-iteration-count: 1;
+
+
+@mixin animateContinue($d) {
+    animation-name: continue;
+    animation-duration: 1s;
+    animation-delay: ($d+0.5+s);
+    animation-iteration-count:infinite;
     animation-fill-mode: both;
-    
+    animation-timing-function: step-end;
+    transition: none;
 }
 
 
 .chat_bubble {
+    $d : 4.5;
     @include size(340px, 100px);
     @include dflexCenter;
     background: center center / 80% 100% no-repeat url("../img/scene_1_chat_bubble.svg");
-    @include animateChatBuuble;
+    @include animateChatBuuble($d+s);
     img {
         width: 260px;
         position: absolute;
@@ -30,9 +35,23 @@
         width: fit-content;
         position: relative;
         top: -12px;
-        font-size: 18px;
+        font-size: 24px;
+        font-weight: 600;
         white-space: pre-line;
-        @include animateChatContent;
+        text-align: center;
+        @include animateDelayFadein($d);
+    }
+    i {
+        position: absolute;
+        right: 55px;
+        bottom: 36px;
+        @include animateContinue($d);
+    }
+    &.second{
+        @include animateChatBuuble();
+        p {
+            @include animateDelayFadein();
+        }
     }
 }
 
@@ -52,12 +71,12 @@
     }
 }
 
-
-@keyframes chatContent{
-    0% {
-      opacity: 0;
+@keyframes continue {
+    0%,
+     100% {
+        opacity: 0;
     }
-    100% {
+    50% {
         opacity: 1;
     }
 }

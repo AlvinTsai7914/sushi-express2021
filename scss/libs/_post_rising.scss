@@ -1,0 +1,25 @@
+@mixin animatePostRising {
+    animation-name: postRising;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
+}
+
+.post_rising {
+    z-index: 12;
+    width: 137px;
+    @include animatePostRising;
+}
+
+@keyframes postRising{
+    0%{
+        transform: translateY(150px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
