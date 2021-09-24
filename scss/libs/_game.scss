@@ -1,0 +1,329 @@
+@mixin dflexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin animateRotate {
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    transform-origin: left top;
+}
+
+@mixin animateShadow {
+    animation-name: shadow;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+}
+
+@mixin animateLight {
+    animation-name: light;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    transform-origin: left top;
+}
+
+@mixin animateBg {
+    animation-name: bg_focus;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+@mixin animatePrize {
+    animation-name: float_up_prize;
+    animation-duration: 3s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@mixin animateFloatUp($delay: 0s) {
+    animation-name: float_up;
+    animation-duration: 1s;
+    animation-delay: $delay;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@mixin animateFlow($delay: 0s) {
+    animation-name: flow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: $delay;
+    animation-fill-mode: both;
+}
+
+@mixin animateHide {
+    animation-name: hide;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+@mixin animateWrongTarget {
+    animation-name: wrongTarget;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+}
+
+.game_scene {
+    @include size(100%);
+    margin: 0 auto;
+    position: relative;
+    &.active {
+        @include animateBg;
+    }
+    .chat_bubble_box {
+        width: fit-content;
+        margin: 0 auto;
+        padding-top: 50px;
+        .chat_bubble{
+            background-image: url("../img/scene_2_chat_bubble.svg");
+            &.game_first{
+                $d : 2.5;
+                @include animateChatBuuble($d+s);
+                p{
+                    @include animateDelayFadein($d);
+                }
+            }
+            &.game_second,
+            &.game_third,
+            &.game_fail,
+            &.egg,
+            &.egg1,
+            &.egg2{
+                @include animateChatBuuble();
+                p{
+                    @include animateDelayFadein();
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.float_up1 {
+    position: absolute;
+    bottom: 25%;
+    left: 30px;
+    @include animateFloatUp(1s);
+}
+
+.float_up2 {
+    position: absolute;
+    bottom: 10%;
+    right: 100px;
+    @include animateFloatUp(1.5s);
+}
+
+.float_up3 {
+    position: absolute;
+    bottom: 35%;
+    right: 50px;
+    @include animateFloatUp(1.8s);
+    &.active {
+        @include animateHide;
+    }
+}
+
+.float_up4 {
+    position: absolute;
+    bottom: 20%;
+    right: 100px;
+    display: none;
+    @include animateFloatUp(0.2s);
+    &.active {
+        @include animateHide;
+    }
+}
+
+.float_up5 {
+    width: fit-content;
+    margin: 0 auto 0;
+    display: none;
+    position: relative;
+    top: 30%;
+    @include animatePrize;
+
+    &.active {
+        .light {
+            @include animateLight;
+        }
+        .shadow {
+            @include animateShadow;
+        }
+    }
+}
+
+.fish {
+    @include size(130px);
+    @include animateFlow;
+    &.active {
+        @include animateHide;
+    }
+    &.wrong {
+        @include animateWrongTarget;
+    }
+}
+
+.shrink {
+    @include size(110px);
+    @include animateFlow(0.8s);
+    &.active {
+        @include animateHide;
+    }
+    &.wrong {
+        @include animateWrongTarget;
+    }
+}
+
+.diu {
+    @include size(110px);
+    pointer-events:none;
+
+    @include animateFlow(0.3s);
+    &.prize {
+        @include size(130px);
+        animation-name: none;
+    }
+}
+
+.light {
+    background-color: white;
+    @include size(250px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background: center center / cover url("../img/scene_2_light.svg");
+    @include animateRotate;
+}
+
+.shadow {
+    border-radius: 50%;
+    @include size(inherit);
+}
+
+.message4,
+.message5,
+.message6 {
+    display: none;
+    text-align: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 15px 0 rgba(white, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 10vh 100vw rgba(white, 0.8);
+    }
+}
+
+@keyframes light {
+    0% {
+        transform: scale(1) rotate(0deg) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: scale(4) rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+@keyframes bg_focus {
+    0% {
+        transform: scale(1) translate(0, 0px);
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.25) translate(0, 15px);
+    }
+    100% {
+        transform: scale(1.5) translate(0, 60px);
+        opacity: 0;
+    }
+}
+
+@keyframes float_up_prize {
+    0% {
+        transform: translate(0, 400px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, -100px);
+        opacity: 1;
+    }
+}
+
+@keyframes float_up {
+    0% {
+        transform: translate(0, 100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+}
+
+@keyframes flow {
+    0% {
+        transform: translate(0, 10px);
+    }
+    100% {
+        transform: translate(0, -10px);
+    }
+}
+
+@keyframes hide {
+    0% {
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(0, -10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 100px);
+        opacity: 0;
+    }
+}
+
+@keyframes wrongTarget {
+    0%{
+        transform: translateY(-100px) rotate(25deg);
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(-25deg);
+    }
+}

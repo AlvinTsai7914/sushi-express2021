@@ -6,25 +6,52 @@
         <link rel="icon" type="image/png" sizes="16x16" href="img/scene_5_sushi.svg" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="/fontawesome/css/all.css" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>版型</title>
     </head>
     <body>
         <!-- warpper 開始 -->
         <div class="wrapper">
+
+            <!-- 開始遊戲按鈕 -->
+            <div class="start_game_btn">
+                <img src="../img/scene_1_button.svg" alt="" />
+            </div>
+            
             <!-- container 開始 -->
-            <div class="container">
+            <div class="container d-none">
+
+                <!-- 第零幕 loading -->
+                <div class="loading_scene">
+                    <div class="loading_front">
+                        <div class="black_bg left"></div>
+                        <div class="black_bg right"></div>
+                        <div class="loading_wrapper">
+                            <img src="img/loading.svg" alt="" />
+                            <p>Loading...</p>
+                            <div class="loading_bar">
+                                <div class="loading_inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第一幕 開場 -->
                 <div class="intro_scene d-none">
                     <div class="main">
-                        <!-- 對話框 -->
+                        <!-- 對話框1 -->
                         <div class="chat_bubble first">
                             <p class="chat">我是名偵探 鮪魚俠</p>
                             <i class="fas fa-caret-down fa-lg"></i>
                         </div>
+
+                        <!-- 對話框2 -->
                         <div class="chat_bubble second d-none">
-                            <p class="chat">有一個任務
+                            <p class="chat">有一個任務 
                                 需要你協助我完成</p>
                         </div>
+
+                        <!-- 鮪魚俠 -->
                         <div class="man">
                             <div class="magnifier">
                                 <div class="spark_box">
@@ -39,17 +66,67 @@
                             </div>
                             <img class="post_rising d-none" src="img/scene_1_post.svg" alt="" />
                         </div>
-                        <div class="btn_box d-none">
+                        <div class="btn_box d-none check_mission">
                             <div class="pointer"></div>
                         </div>
                     </div>
                 </div>
+
+            
+               <!-- 第二幕 遊戲 -->
+               <div class="game_scene d-none">
+
+                <!-- 對話框1 -->
+                <div class="chat_bubble game_first  ">
+                    <p class="chat">台灣鯛魚哥在哪裡啊?
+                        <span>請點擊捕捉</span>
+                    </p>
+                </div>
+
+                <div class="float_up3">
+                    <img class="diu" src="img/scene_2_fish_3.svg"/>
+                </div>
+
+                <div class="float_up4">
+                    <img class="diu" src="img/scene_2_fish_3.svg"/>
+                  </div>
+
+                <div class="float_up1">
+                    <img class="fish" src="img/scene_2_fish_1.svg"/>
+                </div>
+
+                <div class="float_up2">
+                    <img class="shrink" src="img/scene_2_fish_2.svg"/>
+                </div>
+  
+                <div class="float_up5">
+                    <div class="shadow">
+                        <img class="diu prize" src="img/scene_2_fish_light.svg"/>
+                    </div>
+                    <div class="light"></div>
+                </div>
+            </div>
+
+
             </div>
         </div>
         <!-- warpper 結束 -->
 
-        <!-- loading -->
-        <div class="loading_scene">
+        <!-- 接取任務 -->
+        <div class="post_wrapper d-none">
+            <div class="post">
+                <img class="content" src="img/scene_1_post_content.svg" alt="" />
+                <div class="btn_box d-none accept_mission">
+                    <div class="pointer"></div>
+                </div>
+                <img class="letsgo d-none" src="img/letsgo.jpg" alt="" />
+            </div>
+        </div>
+        <!-- 過場黑幕 -->
+        <div class="trans_scene d-none"></div>
+
+        <!-- 放大鏡從右到左閃過(備用方案)-->
+        <!-- <div class="loading_scene">
             <div class="loading_front">
                 <div class="black_bg left"></div>
                 <div class="black_bg right"></div>
@@ -61,31 +138,22 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="loading_back">
-                        <div class="flash_wrapper">
-                            <div class="magnifier">
-                                <div class="spark_box">
-                                    <img class="spark" src="./img/scene_1_spark.svg" alt="" />
-                                    <img class="spark_small" src="./img/scene_1_spark.svg" alt="" />
-                                </div>
-                                <div class="glass_border">
-                                    <div class="glass">
-                                        <img class="flash" src="./img/scene_1_flash.svg" alt="" />
-                                    </div>
-                                </div>
+            <div class="loading_back">
+                <div class="flash_wrapper">
+                    <div class="magnifier">
+                        <div class="spark_box">
+                            <img class="spark" src="./img/scene_1_spark.svg" alt="" />
+                            <img class="spark_small" src="./img/scene_1_spark.svg" alt="" />
+                        </div>
+                        <div class="glass_border">
+                            <div class="glass">
+                                <img class="flash" src="./img/scene_1_flash.svg" alt="" />
                             </div>
                         </div>
-                    </div> -->
-        </div>
-
-        <!-- 接取任務 --> 
-        <div class="post_wrapper d-none">
-            <div class="post">
-                <img class="content" src="img/scene_1_post_content.svg" alt="" />
-                    <div class="pointer"></div>
-           
+                    </div>
+                </div>
             </div>
-        </div>
+        </div> -->
 
         <audio data-name="click" src="audio/click.mp3" alt=""></audio>
         <audio data-name="mission" src="audio/misson.mp3" alt=""></audio>
@@ -97,47 +165,41 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/common.js"></script>
         <script>
-            function playAudio(dataName) {
-                let audio = $(`audio[data-name="${dataName}"]`);
-                $(audio).trigger("play");
-            }
-            function pauseAudio(dataName) {
-                let audio = $(`audio[data-name="${dataName}"]`);
-                $(audio).trigger("pause");
-            }
-            // loading > intro
             $(function () {
-                // 設定高度為瀏覽器內高
-                let winInnerHeight = $(window).innerHeight();
-                console.log(winInnerHeight);
-                $(".wrapper").css({ height: winInnerHeight });
+                let n =4;
+    
 
-                // 遊戲開始10秒後loading_scene消失
-                setTimeout(() => {
-                    $(".loading_scene").addClass("d-none");
-                }, 9500);
+                $(".game_scene").click(function (e) {
+                    let etc = e.target.className;
+                    // let etp = e.target.parent();
+                    if (etc === "diu") {
+                        $(e.target).parent().addClass("active");
+                        // 被點擊的消失 下一個出來
+                        setTimeout(function () {
+                            $(e.target).parent().hide();
+                            $(".float_up"+n).show();
+                            n++;
+                        }, 1000);
+                        if (n === 5) {
+                            $(".shrink").addClass("active");
+                            $(".fish").addClass("active");
+                        }
+                    }
+                    
+                    if (etc === "diu prize") {
+                        $(".float_up5").addClass("active");
+                        $(".game_scene").addClass("active");
+                        setTimeout(function () {
+                            $(".game_scene").hide();
+                        }, 6000);
+                    }
 
-                setTimeout(() => {
-                    $(".intro_scene").removeClass("d-none");
-                    playAudio("BGM-suspense");
-                }, 4000);
-            });
-
-            // 第一個對話框 > 任務顯示
-            $(function () {
-                $(".intro_scene").one("click", function () {
-                    $(".chat_bubble.first").addClass("d-none");
-                    $(".chat_bubble.second.d-none").removeClass("d-none");
-                    $(".post_rising").removeClass("d-none");
-                    setTimeout(() => {
-                        $(".btn_box").removeClass("d-none");
-                    }, 1500);
-                    playAudio("mission");
-                });
-
-                $(".btn_box").on("click", function () {
-                    $(".post_wrapper").removeClass("d-none")
-                    playAudio("click");
+                    if (etc === "shrink" || etc === "fish") {
+                        $(`.${etc}`).addClass("wrong")
+                        setTimeout(() => {
+                            $(`.${etc}`).removeClass("wrong")
+                        }, 1000)
+                    }
                 });
             });
         </script>

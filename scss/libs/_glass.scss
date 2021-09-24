@@ -10,10 +10,11 @@
 
 @mixin animateSpark($d:0) {
     animation-name: spark;
-    animation-duration: 5s;
+    animation-duration: 4.5s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-delay: $d+s;
+    animation-timing-function: ease-out;
 }
 
 
@@ -87,7 +88,7 @@
         transform:scale(0);
     }
     10% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
     20%{
         transform:scale(0.3);

@@ -2,6 +2,12 @@
     animation: intro 2s ease 2.5s both;
 }
 
+@mixin animateTransScene {
+    animation-name: transScene;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +17,7 @@
 body {
     overflow: hidden;
     position: fixed;
+    background-color: #000;
 }
 .wrapper {
     width: 100vw;
@@ -21,20 +28,25 @@ body {
     margin: 0 auto;
 }
 
+.start_game_btn {
+    width:200px;
+}
+   
+
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 420px;
     height: 100%;
+    max-height: 926px;
     overflow: hidden;
     padding: 0;
-}
-
-.black_curtain {
+    position: relative;
+    background-color: aliceblue;
 }
 
 .loading_scene {
     @include size(100%);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;    
     z-index:100;    
@@ -63,7 +75,22 @@ body {
     @include animateIntro;
 }
 
+.trans_scene {
+    @include size(150%);
+    position: absolute;
+    top: 0;
+    background-color: #000;
+    z-index: 300;
+    @include dflexCenter;
+    @include animateTransScene;
+}
 
+.game_scene {
+    @include size(100%);
+    background: url("../img/scene_2_bg.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
 
 
 @keyframes intro {
@@ -73,4 +100,20 @@ body {
     100% {
         transform: scale(1) translate(0);
     }
+}
+
+@keyframes transScene{
+    0% {
+        transform: translateX(100%);
+    }
+    15%{
+        transform: translateX(0);
+    }
+    85%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+
 }

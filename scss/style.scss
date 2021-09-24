@@ -1,5 +1,8 @@
-//動畫
+
+@import "libs/variable";
 @import "libs/mixin";
+
+//動畫
 @import "libs/animation";
 @import "libs/loading";
 @import "libs/post_rising";
@@ -7,8 +10,8 @@
 @import "libs/pointer";
 @import "libs/glass";
 @import "libs/post";
+@import "libs/game";
 
-@import "libs/variable";
 @import "libs/page";
 @import "libs/layout";
 // @import "libs/part";

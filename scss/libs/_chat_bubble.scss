@@ -41,16 +41,28 @@
         text-align: center;
         @include animateDelayFadein($d);
     }
+    span{
+        color: red;
+    }
     i {
         position: absolute;
         right: 55px;
         bottom: 36px;
         @include animateContinue($d);
     }
+
     &.second{
         @include animateChatBuuble();
         p {
             @include animateDelayFadein();
+        }
+    }
+
+    &.game_first{
+        $d : 2.5;
+        @include animateChatBuuble($d+s);
+        p{
+            @include animateDelayFadein($d);
         }
     }
 }
