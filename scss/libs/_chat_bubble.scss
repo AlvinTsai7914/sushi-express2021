@@ -58,13 +58,6 @@
         }
     }
 
-    &.game_first{
-        $d : 2.5;
-        @include animateChatBuuble($d+s);
-        p{
-            @include animateDelayFadein($d);
-        }
-    }
 }
 
 
