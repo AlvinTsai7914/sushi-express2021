@@ -88,43 +88,99 @@ $(function () {
         setTimeout(() => {
             dNone(".trans_scene") 
         }, 5000);
+
+            // 進入遊戲後五秒才能點擊鯛
+        setTimeout(() => {
+            console.log("pointer-events:auto");
+            $(".diu").css({ "pointer-events": "auto" });
+        }, 13000);
     });
 });
 
-
-function failure() {
+// game_scene
+$(function () {
+    let n = 4;
     let failure_count = 1;
-    console.log("failure_count:" + failure_count)
-    if (failure_count < 10 ){
-        $(`.${etc}`).addClass("wrong");
-        dNone(".chat_bubble")
-        dShow(".chat_bubble.game_fail")
-        failure_count++
-        setTimeout(() => {
-            $(`.${etc}`).removeClass("wrong");
-        }, 1000);
-    } else if (failure_count >= 10 && failure_count < 20){
-        $(`.${etc}`).addClass("wrong");
-        dNone(".chat_bubble")
-        dShow(".egg1")
-        failure_count++
-        setTimeout(() => {
-            $(`.${etc}`).removeClass("wrong");
-        }, 1000);
-    } else if (failure_count >= 20 && failure_count < 30){
-        $(`.${etc}`).addClass("wrong");
-        dNone(".chat_bubble")
-        dShow(".egg2")
-        failure_count++
-        setTimeout(() => {
-            $(`.${etc}`).removeClass("wrong");
-        }, 1000);
-    } else if (failure_count >= 30){
-        $(".float_up" + (n-1)).addClass("active")
-        $(".shrink").addClass("active");
-        $(".fish").addClass("active");
-        $(".float_up5").show();
-        dNone(".chat_bubble")
-        dShow(".egg")
+
+    function failure(etc) {
+        console.log("failure_count:" + failure_count);
+        if (failure_count < 10) {
+            $(`.${etc}`).addClass("wrong");
+            dNone(".chat_bubble");
+            dShow(".chat_bubble.game_fail");
+            setTimeout(() => {
+                $(`.${etc}`).removeClass("wrong");
+            }, 1000);
+        } else if (failure_count >= 10 && failure_count < 20) {
+            $(`.${etc}`).addClass("wrong");
+            dNone(".chat_bubble");
+            dShow(".egg1");
+            setTimeout(() => {
+                $(`.${etc}`).removeClass("wrong");
+            }, 1000);
+        } else if (failure_count >= 20 && failure_count < 30) {
+            $(`.${etc}`).addClass("wrong");
+            dNone(".chat_bubble");
+            dShow(".egg2");
+
+            setTimeout(() => {
+                $(`.${etc}`).removeClass("wrong");
+            }, 1000);
+        } else if (failure_count >= 30) {
+            $(".float_up" + (n - 1)).addClass("active");
+            $(".shrink").addClass("active");
+            $(".fish").addClass("active");
+            $(".float_up5").show();
+            dNone(".chat_bubble");
+            dShow(".egg");
+        }
     }
-}
+
+
+
+    $(".game_scene").click(function (e) {
+        let etc = e.target.className;
+
+        if (etc === "diu") {
+            $(e.target).parent().addClass("active");
+            $(".diu").css({ "pointer-events": "none" });
+            // 被點擊的消失 下一個出來
+            setTimeout(function () {
+                console.log("pointer-events none");
+                $(e.target).parent().hide();
+                $(".float_up" + n).show();
+                n++;
+            }, 1000);
+
+            setTimeout(function () {
+                console.log("pointer-events auto");
+                $(".diu").css({ "pointer-events": "auto" });
+            }, 5000);
+
+            if (n === 4) {
+                dNone(".chat_bubble");
+                dShow(".game_second");
+            }
+
+            if (n === 5) {
+                $(".shrink").addClass("active");
+                $(".fish").addClass("active");
+                dNone(".chat_bubble");
+                dShow(".game_third");
+            }
+        }
+
+        if (etc === "diu prize") {
+            $(".float_up5").addClass("active");
+            $(".game_scene").addClass("active");
+            setTimeout(function () {
+                $(".game_scene").hide();
+            }, 6000);
+        }
+
+        if (etc === "shrink" || etc === "fish") {
+            failure(etc);
+            failure_count++;
+        }
+    });
+});

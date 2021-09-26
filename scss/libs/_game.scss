@@ -4,6 +4,12 @@
     justify-content: center;
 }
 
+@mixin wavePosition {
+    position:absolute;
+    bottom:$b;
+    left: 0;
+}
+
 @mixin animateRotate {
     animation-name: rotate;
     animation-duration: 4s;
@@ -78,10 +84,12 @@
     animation-delay: 0s;
 }
 
+
 .game_scene {
     @include size(100%);
     margin: 0 auto;
     position: relative;
+
     &.active {
         @include animateBg;
     }
@@ -111,39 +119,47 @@
             }
         }
     }
+    .river {
+        @include size(100%, auto);
+        position:absolute;
+        top: 45%;
+    }
 }
 
 
 
-
+// 魚
 .float_up1 {
     position: absolute;
-    bottom: 25%;
-    left: 30px;
-    @include animateFloatUp(1s);
+    left: 5%;
+    top: -10%;
+    @include animateFloatUp(1.8s);
 }
 
+// 蝦
 .float_up2 {
     position: absolute;
-    bottom: 10%;
-    right: 100px;
+    left: 60%;
+    top: 0%;
     @include animateFloatUp(1.5s);
 }
 
+// 台灣鯛1
 .float_up3 {
     position: absolute;
-    bottom: 35%;
-    right: 50px;
-    @include animateFloatUp(1.8s);
+    left: 70%;
+    top: 21%;
+    @include animateFloatUp(1s);
     &.active {
         @include animateHide;
     }
 }
 
+// 台灣鯛2
 .float_up4 {
     position: absolute;
-    bottom: 20%;
-    right: 100px;
+    left: 0%;
+    top: 30%;
     display: none;
     @include animateFloatUp(0.2s);
     &.active {
@@ -151,12 +167,14 @@
     }
 }
 
+// 台灣鯛發光
 .float_up5 {
     width: fit-content;
     margin: 0 auto 0;
     display: none;
-    position: relative;
-    top: 30%;
+    position: absolute;
+    left: 50%;
+    top: -30%;
     @include animatePrize;
 
     &.active {
@@ -219,12 +237,7 @@
     @include size(inherit);
 }
 
-.message4,
-.message5,
-.message6 {
-    display: none;
-    text-align: center;
-}
+
 
 @keyframes rotate {
     0% {
@@ -273,12 +286,12 @@
 
 @keyframes float_up_prize {
     0% {
-        transform: translate(0, 400px);
+        transform: translate(-50%, 400px);
         opacity: 0;
     }
 
     100% {
-        transform: translate(0, -100px);
+        transform: translate(-50%, -100px);
         opacity: 1;
     }
 }

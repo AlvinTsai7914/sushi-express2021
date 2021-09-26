@@ -1,15 +1,19 @@
 
 @import "libs/variable";
 @import "libs/mixin";
-
-//動畫
 @import "libs/animation";
-@import "libs/loading";
+
+//元件
+@import "libs/post";
+@import "libs/wave";
 @import "libs/post_rising";
 @import "libs/chat_bubble";
 @import "libs/pointer";
 @import "libs/glass";
-@import "libs/post";
+
+//場景
+
+@import "libs/loading";
 @import "libs/game";
 
 @import "libs/page";

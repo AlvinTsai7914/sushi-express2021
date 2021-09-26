@@ -73,39 +73,83 @@
                 </div>
 
             
-               <!-- 第二幕 遊戲 -->
-               <div class="game_scene d-none">
+                <div class="game_scene d-none">
+                    <div class="chat_bubble_box">
+                        <!-- 對話框1 -->
+                        <div class="chat_bubble game_first">
+                            <p class="chat">台灣鯛魚哥在哪裡啊? 
+                                <span>請點擊捕捉</span></p>
+                        </div>
 
-                <!-- 對話框1 -->
-                <div class="chat_bubble game_first  ">
-                    <p class="chat">台灣鯛魚哥在哪裡啊?
-                        <span>請點擊捕捉</span>
-                    </p>
-                </div>
+                        <!-- 對話框2 -->
+                        <div class="chat_bubble game_second d-none">
+                            <p class="chat">手指有點粗喔</p>
+                        </div>
 
-                <div class="float_up3">
-                    <img class="diu" src="img/scene_2_fish_3.svg"/>
-                </div>
+                        <!-- 對話框3 -->
+                        <div class="chat_bubble game_third d-none">
+                            <p class="chat">又被騙啦!鯛魚哥在這!!</p>
+                        </div>
 
-                <div class="float_up4">
-                    <img class="diu" src="img/scene_2_fish_3.svg"/>
-                  </div>
+                        <!-- 對話框 點到蝦或飛魚 -->
+                        <div class="chat_bubble game_fail d-none">
+                            <p class="chat">再仔細找找?</p>
+                        </div>
 
-                <div class="float_up1">
-                    <img class="fish" src="img/scene_2_fish_1.svg"/>
-                </div>
+                        <!-- 對話框 點到蝦或飛魚 -->
+                        <div class="chat_bubble egg1 d-none">
+                            <p class="chat">其實你有看到鯛魚哥的... 
+                                ..............對吧?</p>
+                        </div>
 
-                <div class="float_up2">
-                    <img class="shrink" src="img/scene_2_fish_2.svg"/>
-                </div>
-  
-                <div class="float_up5">
-                    <div class="shadow">
-                        <img class="diu prize" src="img/scene_2_fish_light.svg"/>
+                        <!-- 對話框 點到蝦或飛魚 -->
+                        <div class="chat_bubble egg2 d-none">
+                            <p class="chat">再這樣我要生氣摟</p>
+                        </div>
+
+                        <!-- 對話框 點到蝦或飛魚 -->
+                        <div class="chat_bubble egg d-none">
+                            <p class="chat">好吧好吧...算我輸了 鯛魚哥在這...</p>
+                        </div>
                     </div>
-                    <div class="light"></div>
+                    <div class="river">
+                        <!-- 第四層海浪 -->
+                        <div class="wave_box z-10">
+                            <img src="img/scene_2_wave_4.svg" alt="" class="wave" />
+                        </div>
+                        <!-- 第三層海浪 -->
+                        <div class="wave_box z-20">
+                            <div class="float_up3">
+                                <img class="diu" src="img/scene_2_fish_3.svg" />
+                            </div>
+                            <div class="float_up5">
+                                <div class="shadow">
+                                    <img class="diu prize" src="img/scene_2_fish_light.svg" />
+                                </div>
+                                <div class="light"></div>
+                            </div>
+                            <img src="img/scene_2_wave_3.svg" alt="" class="wave" />
+                        </div>
+                        <!-- 第二層海浪 -->
+                        <div class="wave_box z-30">
+                            <div class="float_up1">
+                                <img class="fish" src="img/scene_2_fish_1.svg" />
+                            </div>
+
+                            <img src="img/scene_2_wave_2.svg" alt="" class="wave" />
+                        </div>
+                        <!-- 第一層海浪 -->
+                        <div class="wave_box z-40">
+                            <div class="float_up2">
+                                <img class="shrink" src="img/scene_2_fish_2.svg" />
+                            </div>
+                            <div class="float_up4">
+                                <img class="diu" src="img/scene_2_fish_3.svg" />
+                            </div>
+                            <img src="img/scene_2_wave_1.svg" alt="" class="wave" />
+                        </div>
+                    </div>
                 </div>
-            </div>
 
 
             </div>
@@ -164,45 +208,5 @@
         <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""></audio>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/common.js"></script>
-        <script>
-            $(function () {
-                let n =4;
-    
-
-                $(".game_scene").click(function (e) {
-                    let etc = e.target.className;
-                    // let etp = e.target.parent();
-                    if (etc === "diu") {
-                        $(e.target).parent().addClass("active");
-                        // 被點擊的消失 下一個出來
-                        setTimeout(function () {
-                            $(e.target).parent().hide();
-                            $(".float_up"+n).show();
-                            n++;
-                        }, 1000);
-                        if (n === 5) {
-                            $(".shrink").addClass("active");
-                            $(".fish").addClass("active");
-                        }
-                    }
-                    
-                    
-                    if (etc === "diu prize") {
-                        $(".float_up5").addClass("active");
-                        $(".game_scene").addClass("active");
-                        setTimeout(function () {
-                            $(".game_scene").hide();
-                        }, 6000);
-                    }
-
-                    if (etc === "shrink" || etc === "fish") {
-                        $(`.${etc}`).addClass("wrong")
-                        setTimeout(() => {
-                            $(`.${etc}`).removeClass("wrong")
-                        }, 1000)
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
