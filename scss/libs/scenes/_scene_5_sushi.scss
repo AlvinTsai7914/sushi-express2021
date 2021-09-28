@@ -62,8 +62,9 @@
         }
     }
     .btn_box {
-        @include size(50%,80px);
-        animation-delay: 0.8s;
+        @include size(40%,80px);
+        animation-delay: 2s;
+        pointer-events: none;
         img {
             width: 100%;
         }

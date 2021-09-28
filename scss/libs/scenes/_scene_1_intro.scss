@@ -2,9 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    .billboard {
+        width: 70%;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            width: 100%;
+        }
+    }
     .main {
         position: relative;
         top: 5%;
+      
         .chat_bubble_1 {
             @include size(100%, 70px);
         }

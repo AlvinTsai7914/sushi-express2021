@@ -1,4 +1,5 @@
 let timer = true;
+let bgm = "";
 function playAudio(dataName) {
     let audio = $(`audio[data-name="${dataName}"]`);
     // let ct = $(audio).attr("currentTime")
@@ -29,9 +30,44 @@ function transScene500ms(preScene, nextScene) {
         dNone(".trans_scene");
     }, 1000);
 }
-
+function handleVisibilityChange() {
+    if(document.visibilityState==='visible'){
+        playAudio(bgm)
+      }else{
+   
+        pauseAudio(bgm)
+      }
+  }
 // loading > intro
 $(function () {
+    // 阻止雙擊放大
+    $(document).on("dbclick",function(e){
+        e.preventDefault();
+    })
+    $(document).on("gesturestart",function(e){
+        e.preventDefault();
+    })
+    let lastTouchEnd = 0;
+    $(document).on("touchend",function(e) {
+        let now = new Date().getTime();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+        }
+        lastTouchEnd = now;
+    });
+
+    // 網頁縮小停止音樂
+    $(document).on("visibilitychange",(e)=> {
+        if(document.visibilityState==='visible'){
+            console.log("vis")
+            playAudio(bgm)
+        }else{
+            console.log("hide")
+            pauseAudio(bgm)
+        }
+    })
+   
+      
     // 初始化設定網頁高度為瀏覽器"內"高
     let winInnerHeight = $(window).innerHeight();
     $(".wrapper").css({ height: winInnerHeight });
@@ -41,18 +77,19 @@ $(function () {
         $(this).addClass("d-none");
         playAudio("click");
         dShow(".container");
+        bgm = "BGM-suspense";
         playAudio("BGM-suspense");
         pauseAudio("BGM-suspense")
         // 4s 音樂開始
         setTimeout(() => {
             dShow(".intro_scene");
             playAudio("BGM-suspense");
-        }, 4000);
+        }, 6000);
 
         // 9.5s loading_scene消失
         setTimeout(() => {
             dNone(".loading_scene");
-        }, 9500);
+        }, 11500);
     });
 });
 
@@ -234,7 +271,7 @@ $(function () {
         playAudio("BGM-happy")
         setTimeout(function () {
             $(".qrcode_scene .btn_box").css("pointer-events", "auto");
-        }, 4000);
+        }, 3000);
     });
 });
 
@@ -253,6 +290,9 @@ $(function () {
                 playAudio("prize");
                 timer=true;
             },1000);
+            setTimeout(function () {
+                $(".sushi_scene .btn_box").css("pointer-events", "auto");
+            }, 3000);
         }
     });
 });
