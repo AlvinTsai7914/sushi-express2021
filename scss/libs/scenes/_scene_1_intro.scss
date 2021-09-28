@@ -1,4 +1,7 @@
 .intro_scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .main {
         position: relative;
         top: 5%;

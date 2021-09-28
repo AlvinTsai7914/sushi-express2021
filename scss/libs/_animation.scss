@@ -32,3 +32,23 @@
         opacity: 1;
     }
 }
+
+@mixin animateRotate {
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    transform-origin: left top;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}

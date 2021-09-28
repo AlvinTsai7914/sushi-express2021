@@ -1,0 +1,161 @@
+@mixin animateCatchingWeb($d:0s){
+    animation-name: catchingWeb;
+    animation-duration: 0.8s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+}
+
+@mixin animateCatchingFish($d:0s){
+    animation-name: catchingFish;
+    animation-duration: 1s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@mixin animateCongradulate($d:0s) {
+    animation-name: congradulate;
+    animation-duration: 0.5s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@mixin animateRibbon($d:0s) {
+    animation-name: ribbon;
+    animation-duration: 0.1s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+    transform-origin: bottom;
+}
+
+@mixin animateBlinkBox($d:0s) {
+    animation-name: blinkBox;
+    animation-duration: 0.3s;
+    animation-delay: $d;
+    animation-iteration-count: infinite;
+    // animation-direction: alternate;
+    // animation-timing-function:steps(2);
+}
+
+.prize_scene {
+    .congratulate {
+        .ribbon {
+            margin-top: 30px;
+            margin-bottom: -25%;
+            @include animateRibbon(1.5s);
+        }
+        .word {
+            position: relative;
+            display: block; 
+            width: 300px;
+            margin: 0 auto;
+            z-index:10;
+        }
+        @include animateCongradulate(1s);
+    }
+
+    .catch_fish {
+        position:relative;
+
+        .fishing_web {  
+            // position: 
+            margin-left: 10%;
+            @include animateCatchingWeb;
+        }   
+        .blink_box {
+            position:absolute;
+            left: 25%;
+            top: 10%;
+            width: 50%;
+            @include animateBlinkBox(1.7s);
+        }
+        .fish_blink {
+
+            // transform: translate(-50%,-50%);
+  
+            @include animateCatchingFish(0.5s);
+        }
+    }
+    .btn_box {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        width: 150px;
+        transform: translateX(-53%);
+        pointer-events: none;
+        @include animateDelayFadein (2);
+        .pointer {
+            bottom: 25%;
+        }
+    }
+}
+
+
+@keyframes catchingWeb {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes catchingFish {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes congradulate {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ribbon {
+    0% {
+        transform: scale(0.1) translateY(80px);
+    }
+    100% {
+        transform: scale(1.2) translateY(0%);
+    }
+}
+
+@keyframes blinkBox {
+    0%,100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}

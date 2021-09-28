@@ -4,19 +4,20 @@
 @import "libs/animation";
 
 //元件
-@import "libs/post";
-@import "libs/wave";
-@import "libs/post_rising";
-@import "libs/chat_bubble";
-@import "libs/pointer";
-@import "libs/glass";
+@import "libs/parts/post_rising";
+@import "libs/parts/pointer";
+@import "libs/parts/chat_bubble";
+@import "libs/parts/post";
+@import "libs/parts/wave";
+@import "libs/parts/glass";
 
 //場景
+@import "libs/scenes/loading";
+@import "libs/scenes/_scene_1_intro";
+@import "libs/scenes/_scene_2_game";
+@import "libs/scenes/_scene_3_prize";
+@import "libs/scenes/_scene_5_sushi";
 
-@import "libs/loading";
-@import "libs/game";
-
-@import "libs/page";
 @import "libs/layout";
 // @import "libs/part";
 

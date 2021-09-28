@@ -5,9 +5,10 @@
     animation-fill-mode: both;
 }   
 
-@mixin animateFadeinStamp {
+@mixin animateFadeinStamp($d:0s) {
     animation-name: fadeinStamp;
     animation-duration:0.3s;
+    animation-delay: $d;
     animation-fill-mode: both ;
     animation-timing-function: ease-in;
 }

@@ -1,0 +1,94 @@
+@mixin animateSlideDown($d:0.5s) {
+    animation-name: slideDown;
+    animation-duration: 0.2s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@mixin animateSushiShadow($d:0s) {
+    animation-name: sushiShadow;
+    animation-duration: 0.8s;
+    animation-delay: $d;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    transform-origin:center; 
+}
+
+.sushi_scene {
+    @include dflexCenter;
+    flex-direction: column;
+    .content {
+        width: 100%;
+        .disc_word {
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+        .sushi_box {
+            width: 60%;
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            z-index: 11;
+            transform: translate(-50%,-50%);
+            .sushi {
+                position: relative;
+                display: block;
+                @include animateSlideDown(0.5s);
+            }
+          
+        }
+   
+        .sushi_shadow {
+            width: 60%;
+            position: absolute;
+            left: 50%;
+            top: 57.5%;
+            transform: translate(-50%,-50%);
+            z-index: 10;
+            @include animateSushiShadow;
+        }
+        .light{
+            @include size(150vh);
+            z-index: 0;
+            background: center center / cover url("../img/scene_5_light.svg");
+            top: 57.5%;
+            animation-duration: 10s;
+        }
+        .light_box {
+         
+            @include animateDelayFadein(0.3);
+        }
+    }
+    .btn_box {
+        @include size(50%,80px);
+        animation-delay: 0.8s;
+        img {
+            width: 100%;
+        }
+        .pointer {
+            bottom: 0%;
+        }
+    }
+}
+
+@keyframes slideDown {
+    0%{
+        transform: translateY(-1000px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes sushiShadow {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 60%;
+        opacity: 1;
+    }
+}

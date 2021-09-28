@@ -72,7 +72,7 @@
                     </div>
                 </div>
 
-            
+                <!-- 第二幕 遊戲 -->
                 <div class="game_scene d-none">
                     <div class="chat_bubble_box">
                         <!-- 對話框1 -->
@@ -83,12 +83,13 @@
 
                         <!-- 對話框2 -->
                         <div class="chat_bubble game_second d-none">
-                            <p class="chat">手指有點粗喔</p>
+                            <p class="chat">眼力有點差喔</p>
                         </div>
 
                         <!-- 對話框3 -->
                         <div class="chat_bubble game_third d-none">
-                            <p class="chat">又被騙啦!鯛魚哥在這!!</p>
+                            <p class="chat">被騙啦!
+                                真的鯛魚哥在這!!</p>
                         </div>
 
                         <!-- 對話框 點到蝦或飛魚 -->
@@ -98,7 +99,7 @@
 
                         <!-- 對話框 點到蝦或飛魚 -->
                         <div class="chat_bubble egg1 d-none">
-                            <p class="chat">其實你有看到鯛魚哥的... 
+                            <p class="chat">其實你有看到鯛魚哥的
                                 ..............對吧?</p>
                         </div>
 
@@ -109,7 +110,8 @@
 
                         <!-- 對話框 點到蝦或飛魚 -->
                         <div class="chat_bubble egg d-none">
-                            <p class="chat">好吧好吧...算我輸了 鯛魚哥在這...</p>
+                            <p class="chat">好吧好吧...算我輸
+                                鯛魚哥在這...</p>
                         </div>
                     </div>
                     <div class="river">
@@ -148,10 +150,68 @@
                             </div>
                             <img src="img/scene_2_wave_1.svg" alt="" class="wave" />
                         </div>
+                        <!-- 預防破圖的海浪 -->
+                        <div class="wave_box z-40" style="pointer-events: none
+                        ;">
+                            <img src="img/scene_2_wave_4.svg" alt="" class="wave" />
+                        </div>
                     </div>
                 </div>
 
+                 <!-- 第三幕 大獎 -->
+                 <div class="prize_scene d-none">
+                    <div class="congratulate">
+                        <img class="ribbon" src="img/scene_3_ribbon.svg" alt=""/>
+                        <img class="word" src="img/scene_3_word.svg" alt=""/>
+                    </div>
+      
+                    <div class="catch_fish">
+                        <img class="fishing_web" src="img/scene_3_fishingweb.svg"/>
+                        <div class="blink_box">
+                            <img class="fish_blink" src="img/scene_3_fish.svg" alt=""/>
+                        </div>
+                    </div>
 
+                    <!-- 按鈕+手 -->
+                    <div class="btn_box">
+                        <img src="img/scene_3_button.svg" alt="" />
+                        <div class="pointer"></div>
+                    </div>
+                </div>
+
+                <!-- 第四幕 QRcode -->
+                <div class="qrcode_scene d-none">
+                    <!-- 按鈕+手 -->
+                    <div class="btn_box">
+                        <img src="img/scene_4_button.svg" alt="" />
+                        <div class="pointer"></div>
+                    </div>
+                </div>
+
+                <!-- 第五幕 -->
+                <div class="sushi_scene d-none">
+                    <div class="content">
+                        <img class="disc_word" src="img/scene_5_disc_word.svg" alt=""/>
+                        <div class="sushi_box">
+                            <img class="sushi" src="img/scene_5_sushi.svg" alt="" />
+                        </div>
+                        
+                        <img class="sushi_shadow" src="img/scene_5_sushi_shadow.svg" alt="" />
+                        <div class="light_box">
+                            <img class="light" src="img/scene_5_light.svg" alt="" />
+                        </div>
+                        
+                    </div>
+                    <div class="btn_box">
+                        <img src="img/scene_5_button.svg" alt="" />
+                        <div class="pointer"></div>
+                    </div>
+                </div>
+
+                 <!-- 表單 -->
+                 <div class="lottery d-none">
+
+                </div>
             </div>
         </div>
         <!-- warpper 結束 -->
@@ -163,12 +223,13 @@
                 <div class="btn_box d-none accept_mission">
                     <div class="pointer"></div>
                 </div>
-                <img class="letsgo d-none" src="img/letsgo.jpg" alt="" />
+                <img class="letsgo d-none" src="img/scene_1_letsgo.svg" alt="" />
             </div>
         </div>
         <!-- 過場黑幕 -->
-        <div class="trans_scene d-none"></div>
-
+        <div class="trans_scene s_default d-none"></div>
+        <!-- 過場黑幕 500s-->
+        <div class="trans_scene s_500 d-none"></div>
         <!-- 放大鏡從右到左閃過(備用方案)-->
         <!-- <div class="loading_scene">
             <div class="loading_front">
@@ -199,13 +260,13 @@
             </div>
         </div> -->
 
-        <audio data-name="click" src="audio/click.mp3" alt=""></audio>
-        <audio data-name="mission" src="audio/misson.mp3" alt=""></audio>
-        <audio data-name="fish_jump" src="audio/fish_jump.mp3" alt=""></audio>
-        <audio data-name="prize" src="audio/prize.mp3" alt=""></audio>
-        <audio data-name="BGM-suspense" src="audio/BGM-suspense.mp3" alt=""></audio>
-        <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt=""></audio>
-        <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""></audio>
+        <audio data-name="click" src="audio/click.mp3" alt="" ></audio>
+        <audio data-name="mission" src="audio/misson.mp3" alt="" ></audio>
+        <audio data-name="fish_jump" src="audio/fish_jump.mp3" alt="" ></audio>
+        <audio data-name="prize" src="audio/prize.mp3" alt="" ></audio>
+        <audio data-name="BGM-suspense" src="audio/BGM-suspense.mp3" alt=""  loop="true"></audio>
+        <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt=""  loop="true"></audio>
+        <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""  loop="true"></audio>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/common.js"></script>
     </body>

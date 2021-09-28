@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/scene_5_sushi.svg" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="/fontawesome/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <title>版型</title>
+    </head>
+    <body>
+        <!-- warpper 開始 -->
+        <div class="wrapper">
+            <!-- container 開始 -->
+            <div class="container">
+                <!-- 第五幕 -->
+                <div class="sushi_scene">
+                    <div class="content">
+                        <img class="disc_word" src="img/scene_5_disc_word.svg" alt=""/>
+                        <div class="sushi_box">
+                            <img class="sushi" src="img/scene_5_sushi.svg" alt="" />
+                        </div>
+                      
+                        <img class="sushi_shadow" src="img/scene_5_sushi_shadow.svg" alt="" />
+                        <div class="light_box">
+                            <img class="light" src="img/scene_5_light.svg" alt="" />
+                        </div>
+                        
+                    </div>
+                    <div class="btn_box">
+                        <img src="img/scene_5_button.svg" alt="" />
+                        <div class="pointer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- warpper 結束 -->
+
+        <audio data-name="click" src="audio/click.mp3" alt=""></audio>
+        <audio data-name="mission" src="audio/misson.mp3" alt=""></audio>
+        <audio data-name="fish_jump" src="audio/fish_jump.mp3" alt=""></audio>
+        <audio data-name="prize" src="audio/prize.mp3" alt=""></audio>
+        <audio data-name="BGM-suspense" src="audio/BGM-suspense.mp3" alt=""></audio>
+        <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt=""></audio>
+        <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""></audio>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/common.js"></script>
+        <script>
+            $(function () {
+                $(".sushi_scene .btn_box").on("click",function () {
+                    dNone(".sushi_scene");
+                    dShow(".lottery")
+                })
+            });
+        </script>
+    </body>
+</html>

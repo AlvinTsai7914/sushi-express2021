@@ -1,24 +1,3 @@
-@mixin dflexCenter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin wavePosition {
-    position:absolute;
-    bottom:$b;
-    left: 0;
-}
-
-@mixin animateRotate {
-    animation-name: rotate;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-    animation-timing-function: linear;
-    transform-origin: left top;
-}
-
 @mixin animateShadow {
     animation-name: shadow;
     animation-duration: 2s;
@@ -239,15 +218,6 @@
 
 
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) translate(-50%, -50%);
-    }
-
-    100% {
-        transform: rotate(360deg) translate(-50%, -50%);
-    }
-}
 
 @keyframes shadow {
     0% {

@@ -2,9 +2,9 @@
     animation: intro 2s ease 2.5s both;
 }
 
-@mixin animateTransScene {
+@mixin animateTransScene($t: 2.7s) {
     animation-name: transScene;
-    animation-duration: 2.5s;
+    animation-duration: $t;
     animation-fill-mode: both;
 }
 
@@ -29,14 +29,12 @@ body {
 }
 
 .start_game_btn {
-    width:200px;
+    width: 200px;
 }
-   
 
 .container {
-    width: 100%;
+    @include size(100%);
     max-width: 420px;
-    height: 100%;
     max-height: 926px;
     overflow: hidden;
     padding: 0;
@@ -48,8 +46,8 @@ body {
     @include size(100%);
     position: absolute;
     top: 0;
-    left: 0;    
-    z-index:100;    
+    left: 0;
+    z-index: 100;
     @include dflexCenter;
 }
 
@@ -57,21 +55,17 @@ body {
     @include size(100%);
     position: fixed;
     top: 0;
-    left: 0;    
-    z-index:100;    
-    background-color: rgba(0,0,0,0.7);
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
     @include dflexCenter;
 }
-
 
 .intro_scene {
     @include size(100%);
     background: url("../img/scene_1_bg.svg") no-repeat;
     background-position: center bottom;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     @include animateIntro;
 }
 
@@ -83,6 +77,9 @@ body {
     z-index: 300;
     @include dflexCenter;
     @include animateTransScene;
+    &.s_500 {
+        @include animateTransScene(0.5s);
+    }
 }
 
 .game_scene {
@@ -92,6 +89,40 @@ body {
     background-size: cover;
 }
 
+.prize_scene {
+    @include size(100%);
+    background: url("../img/scene_3_bg.png") no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.qrcode_scene {
+    @include size(100%);
+    background: url("../img/scene_4_bg.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .btn_box {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        width: 115px;
+        transform: translateX(-50%);
+        pointer-events: none;
+        animation-delay: 1.5s;
+        img {
+            width: 100%;
+        }
+        .pointer {
+            bottom: 25%;
+        }
+    }
+}
+
+.sushi_scene {
+    @include size(100%);
+    background: rgb(233, 27, 35);
+    border: 2px solid red;
+}
 
 @keyframes intro {
     0% {
@@ -102,18 +133,17 @@ body {
     }
 }
 
-@keyframes transScene{
+@keyframes transScene {
     0% {
         transform: translateX(100%);
     }
-    15%{
+    20% {
         transform: translateX(0);
     }
-    85%{
+    80% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-110%);
     }
-
 }
