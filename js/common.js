@@ -30,14 +30,7 @@ function transScene500ms(preScene, nextScene) {
         dNone(".trans_scene");
     }, 1000);
 }
-function handleVisibilityChange() {
-    if(document.visibilityState==='visible'){
-        playAudio(bgm)
-      }else{
-   
-        pauseAudio(bgm)
-      }
-  }
+
 // loading > intro
 $(function () {
     // 阻止雙擊放大
@@ -58,10 +51,12 @@ $(function () {
 
     // 網頁縮小停止音樂
     $(document).on("visibilitychange",(e)=> {
+        // 網頁可見
         if(document.visibilityState==='visible'){
             console.log("vis")
             playAudio(bgm)
         }else{
+            // 不可見
             console.log("hide")
             pauseAudio(bgm)
         }
