@@ -13,7 +13,7 @@
     animation-timing-function: ease-in;
 }
 .post {
-    @include size(90%, auto);
+    @include size(85%, auto);
     max-width: 450px;
     background: center center / cover url("../img/scene_1_post_bg.svg");
     @include animatePostOpen;

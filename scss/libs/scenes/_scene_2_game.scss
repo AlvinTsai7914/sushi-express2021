@@ -68,7 +68,8 @@
     @include size(100%);
     margin: 0 auto;
     position: relative;
-
+    display: flex;
+    justify-content: center;
     &.active {
         @include animateBg;
     }
@@ -76,7 +77,7 @@
         width: fit-content;
         margin: 0 auto;
         padding-top: 50px;
-        .chat_bubble{
+        .chat_bubble{   
             background-image: url("../img/scene_2_chat_bubble.svg");
             &.game_first{
                 $d : 2.5;
@@ -95,6 +96,10 @@
                 p{
                     @include animateDelayFadein();
                 }
+            }
+            &.game_second {
+                width: 340px;
+                height: 112px;
             }
         }
     }
@@ -127,7 +132,7 @@
 .float_up3 {
     position: absolute;
     left: 70%;
-    top: 21%;
+    top: 28%;
     @include animateFloatUp(1s);
     &.active {
         @include animateHide;

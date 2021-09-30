@@ -4,8 +4,8 @@
     justify-content: center;
     .billboard {
         width: 70%;
-        position: absolute;
-        top: 30px;
+        position: fixed;
+        top: 10%;
         left: 50%;
         transform: translateX(-50%);
         img {

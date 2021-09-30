@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-        <link rel="icon" type="image/png" sizes="16x16" href="img/scene_5_sushi.svg" />
+        <link rel="icon" type="image/png" sizes="16x16" href="img/loading.svg" />
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="/fontawesome/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <title>版型</title>
+        <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+        <!-- <link rel="preload" href="img/" as="image" /> -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+        <title>尋找鯛魚哥</title>
     </head>
     <body>
         <!-- warpper 開始 -->
@@ -15,7 +16,7 @@
 
             <!-- 開始遊戲按鈕 -->
             <div class="start_game_btn">
-                <img src="../img/scene_1_button.svg" alt="" />
+                <img src="img/scene_1_button.svg" alt="" />
             </div>
             
             <!-- container 開始 -->
@@ -39,7 +40,7 @@
                 <!-- 第一幕 開場 -->
                 <div class="intro_scene d-none">
                     <div class="billboard"> 
-                        <img src="img/scene_1_logo.svg" alt=""/>
+                        <img src="img/scene_1_logo.png" alt=""/>
                     </div>
                     <div class="main">
                    
@@ -87,18 +88,19 @@
 
                         <!-- 對話框2 -->
                         <div class="chat_bubble game_second d-none">
-                            <p class="chat">眼力有點差喔</p>
+                            <p class="chat">哎呀~臺灣鯛魚哥逃走了！
+                                <span>請再次點擊捕捉</span></p>
                         </div>
 
                         <!-- 對話框3 -->
                         <div class="chat_bubble game_third d-none">
-                            <p class="chat">被騙啦!
-                                真的鯛魚哥在這!!</p>
+                            <p class="chat">再次點擊臺灣鯛魚哥
+                                進行收網捕捉</p>
                         </div>
 
                         <!-- 對話框 點到蝦或飛魚 -->
                         <div class="chat_bubble game_fail d-none">
-                            <p class="chat">再仔細找找?</p>
+                            <p class="chat">這不是臺灣鯛魚哥唷！</p>
                         </div>
 
                         <!-- 對話框 點到蝦或飛魚 -->
@@ -198,7 +200,7 @@
                 <!-- 第五幕 -->
                 <div class="sushi_scene d-none">
                     <div class="content">
-                        <img class="disc_word" src="img/scene_5_disc_word.svg" alt=""/>
+                        <img class="disc_word" src="img/scene_5_word.png" alt=""/>
                         <div class="sushi_box">
                             <img class="sushi" src="img/scene_5_sushi.svg" alt="" />
                         </div>

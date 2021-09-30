@@ -24,7 +24,7 @@
     $d : 4.5;
     @include size(340px, 100px);
     @include dflexCenter;
-    background: center center / 80% 100% no-repeat url("../img/scene_1_chat_bubble.svg");
+    background: center center / 100% 100% no-repeat url("../img/scene_1_chat_bubble.svg");
     @include animateChatBuuble($d+s);
     img {
         width: 260px;
@@ -34,7 +34,7 @@
     p {
         width: fit-content;
         position: relative;
-        top: -12px;
+        top: -15px;
         font-size: 24px;
         font-weight: 600;
         white-space: pre-line;

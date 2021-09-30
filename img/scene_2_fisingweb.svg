@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.32 588.95"><defs><style>.cls-1,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{fill:none;stroke:#fff;}.cls-1{stroke-miterlimit:10;}.cls-1,.cls-2{stroke-width:5.88px;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{stroke-linecap:round;stroke-linejoin:round;}.cls-3{stroke-width:5.66px;}.cls-4{stroke-width:5.37px;}.cls-5{stroke-width:4.95px;}.cls-6{stroke-width:4.41px;}.cls-7{stroke-width:5.32px;}.cls-8{fill:#9c4a5a;}</style></defs><g id="圖層_2" data-name="圖層 2"><g id="人物"><path class="cls-1" d="M12.6,147.46S9.16,198.4,122.94,326c0,0,119.56,140.61,195.27,123.11,0,0,151.91-102.34,130.85-409"/><path class="cls-2" d="M30.57,199.91S316.82,222.39,451,91"/><path class="cls-3" d="M60.35,248.5s266.26,25.27,389.7-104.59"/><path class="cls-4" d="M96,295.64s240.61,28.85,350.24-99.09"/><path class="cls-5" d="M137.26,341.14S343,374.87,433.8,249.56"/><path class="cls-6" d="M184.71,388.09s164.52,39.48,233.14-82.73"/><path class="cls-5" d="M88.68,173.94s68.4,200.5,211.08,277.62"/><path class="cls-5" d="M164.76,157.87s66.81,221,142.44,292.65"/><path class="cls-5" d="M232,143.74s65.85,244.85,86.17,305.33"/><path class="cls-5" d="M301.77,125.88s47.64,187.83,27.84,314"/><path class="cls-5" d="M362,103.47s22.51,213.58-1.82,303.59"/><path class="cls-5" d="M409.73,77.17s11.49,202.75-13.3,273.21"/><line class="cls-1" x1="45.73" y1="107.74" x2="69.01" y2="166.5"/><line class="cls-5" x1="97.09" y1="72.35" x2="131.45" y2="162.52"/><line class="cls-7" x1="156.4" y1="49.56" x2="192.74" y2="153.96"/><line class="cls-7" x1="216.31" y1="31.12" x2="247.17" y2="139.22"/><line class="cls-7" x1="271.45" y1="23.42" x2="300.17" y2="128.89"/><line class="cls-7" x1="323.88" y1="11.66" x2="343.35" y2="106.06"/><line class="cls-7" x1="377.81" y1="4.07" x2="387.14" y2="100.01"/><path class="cls-7" d="M31.5,160S234.37,38.18,444.38,43.39"/><path class="cls-7" d="M112.68,165.14s206.42-89.5,294-88.53"/><path class="cls-8" d="M212.42,24.89C86.29,58.54-8.54,113.63.61,147.94s118.82,34.85,245,1.2,221-88.74,211.81-123S338.55-8.76,212.42,24.89ZM242,135.76c-115.57,30.83-215.08,34-222.27,7.08S100.42,69.1,216,38.26s215.08-34,222.27-7.07S357.57,104.93,242,135.76Z"/><rect class="cls-8" x="404.42" y="92.04" width="24.82" height="529.75" transform="translate(-125.26 271.65) rotate(-31.63)"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566.32 588.95">
+  <defs>
+    <style>
+      .cls-1,.cls-5,.cls-7{fill:none;stroke:#fff}.cls-1{stroke-miterlimit:10;stroke-width:5.88px}.cls-5,.cls-7{stroke-linecap:round;stroke-linejoin:round}.cls-5{stroke-width:4.95px}.cls-7{stroke-width:5.32px}.cls-8{fill:#9c4a5a}
+    </style>
+  </defs>
+  <g id="圖層_2" data-name="圖層 2">
+    <g id="人物">
+      <path class="cls-1" d="M12.6 147.46S9.16 198.4 122.94 326c0 0 119.56 140.61 195.27 123.11 0 0 151.91-102.34 130.85-409"/>
+      <path d="M30.57 199.91S316.82 222.39 451 91" style="stroke-linecap:round;stroke-linejoin:round;stroke-width:5.88px;fill:none;stroke:#fff"/>
+      <path d="M60.35 248.5s266.26 25.27 389.7-104.59" style="stroke-width:5.66px;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke:#fff"/>
+      <path d="M96 295.64s240.61 28.85 350.24-99.09" style="stroke-width:5.37px;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke:#fff"/>
+      <path class="cls-5" d="M137.26 341.14S343 374.87 433.8 249.56"/>
+      <path d="M184.71 388.09s164.52 39.48 233.14-82.73" style="stroke-width:4.41px;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke:#fff"/>
+      <path class="cls-5" d="M88.68 173.94s68.4 200.5 211.08 277.62"/>
+      <path class="cls-5" d="M164.76 157.87s66.81 221 142.44 292.65M232 143.74s65.85 244.85 86.17 305.33M301.77 125.88s47.64 187.83 27.84 314M362 103.47s22.51 213.58-1.82 303.59M409.73 77.17s11.49 202.75-13.3 273.21"/>
+      <path class="cls-1" d="m45.73 107.74 23.28 58.76"/>
+      <path class="cls-5" d="m97.09 72.35 34.36 90.17"/>
+      <path class="cls-7" d="m156.4 49.56 36.34 104.4M216.31 31.12l30.86 108.1M271.45 23.42l28.72 105.47M323.88 11.66l19.47 94.4M377.81 4.07l9.33 95.94M31.5 160S234.37 38.18 444.38 43.39M112.68 165.14s206.42-89.5 294-88.53"/>
+      <path class="cls-8" d="M212.42 24.89C86.29 58.54-8.54 113.63.61 147.94s118.82 34.85 245 1.2 221-88.74 211.81-123-118.87-34.9-245-1.25ZM242 135.76c-115.57 30.83-215.08 34-222.27 7.08S100.42 69.1 216 38.26s215.08-34 222.27-7.07-80.7 73.74-196.27 104.57Z"/>
+      <path class="cls-8" transform="rotate(-31.63 416.886 356.934)" d="M404.42 92.04h24.82v529.75h-24.82z"/>
+    </g>
+  </g>
+</svg>

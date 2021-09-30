@@ -113,6 +113,7 @@ $(function () {
         if (timer === true){
             timer = false;
             playAudio("click");
+            bgm = "BGM-speed";
             playAudio("BGM-speed");
             pauseAudio("BGM-speed")
             // 印章出現
@@ -263,6 +264,7 @@ $(function () {
         // }, 1000);
         transScene500ms(".prize_scene", ".qrcode_scene");
         pauseAudio("BGM-speed")
+        bgm = "BGM-happy"
         playAudio("BGM-happy")
         setTimeout(function () {
             $(".qrcode_scene .btn_box").css("pointer-events", "auto");
