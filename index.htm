@@ -15,12 +15,17 @@
         <div class="wrapper">
 
             <!-- 開始遊戲按鈕 -->
-            <div class="start_game_btn">
+            <!-- <div class="start_game_btn">
                 <img src="img/scene_1_button.svg" alt="" />
             </div>
-            
+             -->
+             <div class="audio_btn d-none">
+                <img  class="" src="img/audio_icon_mute.svg" alt="" />
+                <img class="d-none" src="img/audio_icon_play.svg" alt="" />
+            </div>
+
             <!-- container 開始 -->
-            <div class="container d-none">
+            <div class="container">
 
                 <!-- 第零幕 loading -->
                 <div class="loading_scene">
@@ -82,7 +87,7 @@
                     <div class="chat_bubble_box">
                         <!-- 對話框1 -->
                         <div class="chat_bubble game_first">
-                            <p class="chat">台灣鯛魚哥在哪裡啊? 
+                            <p class="chat">臺灣鯛魚哥在哪裡啊? 
                                 <span>請點擊捕捉</span></p>
                         </div>
 
@@ -282,9 +287,9 @@
         <audio data-name="mission" src="audio/misson.mp3" alt="" ></audio>
         <audio data-name="fish_jump" src="audio/fish_jump.mp3" alt="" ></audio>
         <audio data-name="prize" src="audio/prize.mp3" alt="" ></audio>
-        <audio data-name="BGM-suspense" src="audio/BGM-suspense.mp3" alt=""  loop="true"></audio>
-        <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt=""  loop="true"></audio>
-        <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""  loop="true"></audio>
+        <audio class="bgm" data-name="BGM-suspense" src="audio/BGM-suspense.mp3" alt="" preload="load" loop="true"></audio>
+        <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt="" preload="load" loop="true"></audio>
+        <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt="" preload="load" loop="true"></audio>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/common.js"></script>
     </body>

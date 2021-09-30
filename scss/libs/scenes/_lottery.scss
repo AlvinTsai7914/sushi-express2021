@@ -32,12 +32,13 @@
         padding: 15px 30px;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         .form-group {
             margin-bottom: 15px;
         }
         
         .privacy_policy {
-            margin: 0;
+            margin: 0 0 10px 0;
             label {
                 line-height: 1.5;
                 margin-right: 14px;
@@ -113,6 +114,7 @@
         }
 
         .submit_btn {
+            transform: translateX(-17.5px);
             .loading {
                 display: inline-block;
                 vertical-align: middle;
