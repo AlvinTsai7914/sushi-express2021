@@ -1,19 +1,39 @@
 let timer = true;
 let bgm = "";
 let muted = true;
+let playPromise 
 // 0930修改播放音樂邏輯
+function touchAudio(dataName) {
+    let audio = $(`audio[data-name="${dataName}"]`);
+    let playPromise = $(audio)[0].play()
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+            // Automatic playback started!
+            // Show playing UI.
+            // We can now safely pause video...
+            pauseAudio(dataName)
+        })
+        .catch(error => {
+            // Auto-play was prevented
+            // Show paused UI.
+        });
+    
+    }
+}
 function playAudio(dataName) {
     let audio = $(`audio[data-name="${dataName}"]`);
+    
     // 如果靜音，不撥放
     if (muted) {
         return;
         // 非靜音狀態，且撥放的是BGM，撥放並且不重製播放時間
     } else if (!muted && dataName === bgm) {
-        var playPromise = $(audio).trigger("play");
+        $(audio)[0].play()
         // 其餘音效，每次皆重頭撥放
     } else {
         $(audio).prop("currentTime", 0);
-        $(audio).trigger("play");
+        // $(audio).trigger("play");
+        $(audio)[0].play()
     }
 }
 function pauseAudio(dataName) {
@@ -150,11 +170,9 @@ $(function () {
             timer = false;
             playAudio("click");
             bgm = "BGM-speed";
-            playAudio("BGM-speed");
-            // setTimeout(() => {
-            //     pauseAudio("BGM-speed");
-            // }, 150);
-            pauseAudio("BGM-speed");
+            // playAudio("BGM-speed");
+            // pauseAudio("BGM-speed");
+            touchAudio("BGM-speed")
             // 印章出現
             dShow(".letsgo");
             //1s 後出現過場黑幕
@@ -272,8 +290,11 @@ $(function () {
                 timer = false;
                 $(".float_up5").addClass("active");
                 $(".game_scene").addClass("active");
-                playAudio("prize");
-                pauseAudio("prize");
+         
+                // playAudio("prize");
+                // pauseAudio("prize");
+                touchAudio("prize")
+                // $("audio[data-name='prize']").load()
                 setTimeout(function () {
                     $(".game_scene").hide();
                     dShow(".prize_scene");
@@ -319,8 +340,6 @@ $(function () {
 
         if (timer === true) {
             timer = false;
-            playAudio("prize");
-            pauseAudio("prize");
             setTimeout(function () {
                 playAudio("prize");
                 timer = true;
