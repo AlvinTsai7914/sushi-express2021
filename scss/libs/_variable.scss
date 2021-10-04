@@ -159,6 +159,40 @@ $line-height-phone: 1.3125rem; //bootstrap預設了
         }
     }
 }
+.row {
+	width: 100%;
+	display: flex;
+	.col-1 {
+		width: 8.3%;
+	}
+	.col-2 {
+		width: 16.6%;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-4 {
+		width: 33.3%;
+	}
+	.col-5 {
+		width:41.6%;
+	}
+
+	.col-7 {
+		width:58.3%;
+	}
+	.col-8 {
+		width:66.6%;
+	
+	}
+	.col-9 {
+		width: 75%;
+	
+	}
+	.col-12 {
+		width: 100%;
+	}
+}
 
 
 // ===============網頁字體定義 ===============

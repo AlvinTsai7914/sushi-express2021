@@ -1,8 +1,8 @@
 body.lottery_page {
-    overflow: auto; 
+    overflow: auto;
     position: static;
     background-color: #000;
-    width: 100%; 
+    width: 100%;
     height: auto;
     background-color: #000;
     font-family: $font-family-sans-serif;
@@ -10,18 +10,18 @@ body.lottery_page {
     .wrapper {
         width: 100%;
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        @include respond-to(only-device) {
+            align-items: flex-start;
+        }
     }
-    
+
     .container {
         overflow: auto;
         height: auto;
         max-height: auto;
-    }   
+    }
     .lottery {
-        @include size(100%,926px);
+        @include size(100%, 926px);
         position: relative;
         max-width: 420px;
         padding: 15% 30px;
@@ -29,189 +29,159 @@ body.lottery_page {
         background-position: center center;
         background-size: cover;
         @include dflexCenter;
-    }
-    
-    
-    
-    form {
-        // @include dflexCenter;
-        // flex-direction: column;
-        // flex-wrap: wrap;
-        height: 550px;
-        .form_header {
-            font-size: 18px;
-            text-align: center;
-            color: #b70000;
-            width: 100%;
-            margin-bottom: 20px;
-            display: inline-block;
-            white-space: pre-line;
-        }
-        input {
-            width: 100%;
-            border: 1px solid #888888;
-            border-radius: 8px;
-            padding: 8px 10px;
-            display: inline-block;
-            font-size: 16px;
-        }
-        label {
-            font-size: 16px;
-            display: inline-block;
-            height: fit-content;
-        }
-    
-     
-        .form-group {
-            margin-bottom: 15px;
-            align-items: center;
-            & + .privacy_policy {
-                align-items: flex-start;
+
+        form {
+            // @include dflexCenter;
+            // flex-direction: column;
+            // flex-wrap: wrap;
+            height: 550px;
+            .form_header {
+                font-size: 18px;
+                text-align: center;
+                color: #b70000;
+                width: 100%;
+                margin-bottom: 20px;
+                display: inline-block;
+                white-space: pre-line;
             }
-        }
-        
-        .privacy_policy {
-            margin: 0 0 10px 0;
+            input {
+                width: 100%;
+                border: 1px solid #888888;
+                border-radius: 8px;
+                padding: 8px 10px;
+                display: inline-block;
+                font-size: 16px;
+            }
             label {
-                line-height: 1.5;
-                margin-right: 14px;
+                font-size: 16px;
+                display: inline-block;
+                height: fit-content;
             }
-            div {
-                border: 1px solid #ffb28d;
-                height: 110px;
-    
-                padding: 4px 8px ;
-                background: #fdeed6;
-                overflow-y: scroll;
-            }
-    
-        }
-        .privacy_checkbox {
-            // margin: 0;
-            .col-1 {
-                display: flex;
+
+            .form-group {
+                margin-bottom: 15px;
                 align-items: center;
-                justify-content: center;
-                input {
-                    height: 24px; 
-                    margin-right: 8px;
+                & + .privacy_policy {
+                    align-items: flex-start;
                 }
             }
-            .form-check {
-                position: relative;
-                display: block;
-                padding-left: 1.25rem;
-                // checkbox被勾選時，假checkbox更換背景色
-                .btn-check:checked + .btn{
-                    background-color: #13becf;
+
+            .privacy_policy {
+                margin: 0 0 10px 0;
+                label {
+                    line-height: 1.5;
+                    margin-right: 14px;
+                }
+                div {
+                    border: 1px solid #ffb28d;
+                    height: 110px;
+                    padding: 4px 8px;
+                    background: #fdeed6;
+                    overflow-y: scroll;
+                }
+                p{
+                    white-space: pre-line;
+                }
+            }
+            .privacy_checkbox {
+                // margin: 0;
+                .col-1 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    input {
+                        height: 24px;
+                        margin-right: 8px;
+                    }
+                }
+                .form-check {
+                    position: relative;
+                    display: block;
+                    padding-left: 1.25rem;
+                    // checkbox被勾選時，假checkbox更換背景色
+                    .btn-check:checked + .btn {
+                        background-color: #13becf;
+                    }
+                    .btn {
+                        position: relative;
+                        top: -1px;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #ced4da;
+                        margin-left: -1.25rem;
+                        background-color: #ffffff;
+                        color: white;
+                        i {
+                            position: relative;
+                            left: 6px;
+                            top: 1px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+            .verification {
+                margin-bottom: 25px;
+                label {
+                    width: 25%;
+                }
+                .input_box {
+                    width: 37.5%;
+                    padding-right: 4px;
+                    input {
+                        border-radius: 0px;
+                        height: 42px;
+                    }
+                }
+                .img_box {
+                    width: 37.5%;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 42px;
+                    }
+                }
+            }
+
+            .submit_btn {
+                margin: 0 auto;
+                width: fit-content;
+                transform: translateX(-17.5px);
+                .loading {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 35px;
+                    height: 35px;
+                    border: 5px solid #efefef;
+                    border-radius: 50%;
+                    border-top-color: #24a9b1;
+                    -webkit-animation: spin 650ms ease infinite;
+                    animation: spin 650ms ease infinite;
                 }
                 .btn {
-                    position: relative;
-                    top: -4px;
-                    width: 30px;
-                    height: 30px;
-                    border: 1px solid #ced4da;
-                    margin-left: -1.25rem;
-                    background-color: #ffffff;
+                    width: 126px;
+                    height: 34px;
+                    border: 0px;
+                    background-color: #c76566;
                     color: white;
-                    i {
-                        position: relative; 
-                        left: 6px;
-                        top: 4px;
-                        font-size: 16px;
-                    }
-                    
+                    font-size: 16px;
+                    border-radius: 10px;
                 }
-            }
-        }
-    
-        .verification {
-            margin-bottom: 25px;
-            label {
-                width: 25%;
-            }
-            .input_box {
-                width: 37.5%;
-                padding-right: 4px;
-                input {
-                    border-radius: 0px;
-                    height: 42px;
-                }
-            }
-            .img_box {
-                width: 37.5%;
-                img {
-                    display: block;
-                    width: 100%;
-                    height: 42px;
-                }
-            }
-        }
-    
-        .submit_btn {
-            margin: 0 auto;
-            width: fit-content;
-            transform: translateX(-17.5px);
-            .loading {
-                display: inline-block;
-                vertical-align: middle;
-                width: 35px;
-                height: 35px;
-                border: 5px solid #efefef;
-                border-radius: 50%;
-                border-top-color: #24a9b1;
-                -webkit-animation: spin 650ms ease infinite;
-                animation: spin 650ms ease infinite;
-            }
-            .btn {
-                width: 126px;
-                height: 34px;
-                border: 0px;
-                background-color: #C76566;
-                color: white;
-                font-size: 16px;
-                border-radius: 10px;
-            }
-        }
-        .w-100 {
-            width: 100%;
-        }
-        .row {
-            width: 100%;
-            display: flex;
-            .col-1 {
-                width: 8.3%;
-            }
-            .col-2 {
-                width: 16.6%;
-            }
-            .col-3 {
-                width: 25%;
-            }
-            .col-4 {
-                width: 33.3%;
-            }
-            .col-5 {
-                width:41.6%;
-            }
-    
-            .col-7 {
-                width:58.3%;
-            }
-            .col-8 {
-                width:66.6%;
-            
-            }
-            .col-9 {
-                width: 75%;
-            
-            }
-            .col-12 {
-                width: 100%;
             }
         }
     }
-    
+
+    .result {
+        @include size(100%, 926px);
+        position: relative;
+        max-width: 420px;
+        padding: 15% 20px;
+        background: url("../img/scene_6_bg.svg") no-repeat;
+        background-position: center center;
+        background-size: cover;
+        @include dflexCenter;
+    }
     .result_content {
         font-weight: bold;
         h3 {
@@ -220,8 +190,8 @@ body.lottery_page {
             white-space: pre-line;
             text-align: center;
             display: block;
-            padding: 16px 0; 
-            border-bottom: 2px dashed black; 
+            padding: 16px 0;
+            border-bottom: 2px dashed black;
         }
         p {
             font-size: 22px;
@@ -235,15 +205,14 @@ body.lottery_page {
             color: rgb(148, 0, 0);
         }
     }
-    
+
     .support {
-      font-size: 12px;
-      color: white;
-      position: absolute;
-      bottom: 30px;
-      left: 15px;
+        font-size: 12px;
+        color: white;
+        position: absolute;
+        bottom: 30px;
+        left: 15px;
     }
-    
 }
 
 @keyframes spin {

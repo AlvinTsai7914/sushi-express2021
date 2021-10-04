@@ -206,7 +206,7 @@ $(function () {
             setTimeout(() => {
                 $(".diu").css({ "pointer-events": "auto" });
                 timer = true;
-            }, 13000);
+            }, 11000);
         }
     });
 });
@@ -350,10 +350,15 @@ $(function () {
         }
     });
 });
-
 // sushi_scene
 $(".sushi_scene .btn_box").on("click", function () {
     dNone(".sushi_scene");
     dShow(".lottery");
     $("body").addClass("lottery_page")
 });
+
+// 表單
+$(".lottery .submit_btn").on("click", function(){
+    dNone(".lottery");
+    dShow(".result");
+})
