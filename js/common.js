@@ -2,7 +2,10 @@ let timer = true;
 let bgm = "";
 let muted = true;
 let playPromise 
-// 0930修改播放音樂邏輯
+
+// 0930新增 避免移動裝置上無法執行setTimeout播放音樂，先啟動播放並立刻暫停，等setTimeout時間到時就能正確播放音樂
+// 由於audio.play()會回傳promise，若再回傳promise前就執行audio.pause()，再次執行play()時會丟出錯誤，所以先接住audio.play()的promise確認audio有正確load後再停止音樂
+// 參考文件:https://developers.google.com/web/updates/2017/06/play-request-was-interrupted
 function touchAudio(dataName) {
     let audio = $(`audio[data-name="${dataName}"]`);
     let playPromise = $(audio)[0].play()
@@ -20,9 +23,10 @@ function touchAudio(dataName) {
     
     }
 }
+
+// 0930修改 播放音樂邏輯
 function playAudio(dataName) {
     let audio = $(`audio[data-name="${dataName}"]`);
-    
     // 如果靜音，不撥放
     if (muted) {
         return;
@@ -69,9 +73,9 @@ $(function () {
         e.preventDefault();
     });
     // 阻止多點觸控
-    $(document).on("gesturestart", function (e) {
-        e.preventDefault();
-    });
+    // $(document).on("gesturestart", function (e) {
+    //     e.preventDefault();
+    // });
     // 前後點擊時間小於300ms，阻止事件
     let lastTouchEnd = 0;
     $(document).on("touchend", function (e) {
@@ -290,11 +294,7 @@ $(function () {
                 timer = false;
                 $(".float_up5").addClass("active");
                 $(".game_scene").addClass("active");
-         
-                // playAudio("prize");
-                // pauseAudio("prize");
                 touchAudio("prize")
-                // $("audio[data-name='prize']").load()
                 setTimeout(function () {
                     $(".game_scene").hide();
                     dShow(".prize_scene");
@@ -355,4 +355,5 @@ $(function () {
 $(".sushi_scene .btn_box").on("click", function () {
     dNone(".sushi_scene");
     dShow(".lottery");
+    $("body").addClass("lottery_page")
 });

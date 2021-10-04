@@ -15,11 +15,13 @@
     .main {
         position: relative;
         top: 5%;
-      
-        .chat_bubble_1 {
-            @include size(100%, 70px);
+        .chat_bubble.first::before{
+            content: "(點擊繼續對話)";
+            position: absolute;
+            font-size: 12px;
+            top: 52px;
+            @include animateDelayFadein(5.5)
         }
-
         .man {
             @include size(257px, 330px);
             position: relative;

@@ -19,10 +19,6 @@
                 <img src="img/scene_1_button.svg" alt="" />
             </div>
              -->
-             <div class="audio_btn d-none">
-                <img  class="" src="img/audio_icon_mute.svg" alt="" />
-                <img class="d-none" src="img/audio_icon_play.svg" alt="" />
-            </div>
 
             <!-- container 開始 -->
             <div class="container">
@@ -222,18 +218,77 @@
                     </div>
                 </div>
 
-                 <!-- 表單 -->
-                 <div class="lottery d-none">
+                <!--  -->
+                <div class="lottery d-none">
                     <form>
-                        <div class="col-5"></div>
-                        <div class="col-7"></div>
-                        <div class="col-5"></div>
-                        <div class="col-7"></div>
-                        <div class="col-5"></div>
-                        <div class="col-7"></div>
-                        <div class="col-5"></div>
-                        <div class="col-7"></div>   
+                        <p class="form_header">感謝完成任務
+                            留下您的姓名與手機號碼
+                            就有機會獲得爭鮮迴轉壽司300元餐券唷
+                            ※一組號碼限參加一次</p>
+                        <div class="form-group row">
+                            <label for="name" class="col-5">姓名(必填)</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="name" placeholder="請使用全名以供辨識"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phoneNumber" class="col-5">手機號碼(必填)</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="phoneNumber" placeholder="一組號碼限參加一次"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-5">電子信箱(選填)</label>
+                            <div class="col-7">
+                                <input type="text" class="form-control" id="email" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row privacy_policy">
+                            <label for="" class="col-4">個人資料保護法聲明條款</label>
+                            <div class=" col-8">
+                                <p>邊已作在營，是奇式少百愛變展著，神裡結沒；高大積開習去這中，小女從去馬要才背要，小水為度學家中車心青！爸管條後友起子人？
+                                    女東觀極成臺、官局活拉在推土於去明人可、產外人他、空我極服。再日重引常生個的縣要飛證心花青……完速現管所活證？民官衣遊和適過有們遊但士，喜理下細車易：勢樹以……藝影兒他達美際金月！於畫說三兩金場畫卻獎地就體境紅紅友盡往幾由命就條政如產作十先上滿。
+                                    腳一庭入笑區大線了處時常少一客說質面！平支者中了白，近便生製知政一團庭來。說生事終華自高員萬和不團！久想就雲時統法簡。
+                                    期覺去星制很而男正病？地了因在一口構灣育也園全會他和也地地，後整方以；因質後。力樣金下球及公面全心無去兒命加只收見理為為如腳病家景手中些記中客車部最邊子什個說總教只年價住了的星重靈不方高們坡臺感亞失心：後驚傷背生的酒已望得世學一出德覺的平對，灣致公意受白資中車狀她：已是校說馬：弟值為如張接道上之多時議農麼童望力字你外？</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row privacy_checkbox">
+                            <div class="form-check">
+                                <input class="btn-check d-none" type="checkbox" id="privacy" />
+                                <label class="btn btn-outline-primary" for="privacy">
+                                    <i class="fas fa-check"></i>
+                                </label>
+                                <label class="form-check-label d-inline" for="privacy">
+                                    我已閱讀並同意上述個資條款。
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row verification">
+                            <label for="verifiCode">輸入驗證碼</label>
+                            <div class="input_box">
+                                <input type="text" class="form-control" id="verifiCode" />
+                            </div>
+                            <div class="img_box">
+                                <img src="img/fonfirm-img.png" alt="" style="border: 1px solid gray" />
+                            </div>
+                        </div>
+
+                        <div class="submit_btn">
+                            <div class="loading"></div>
+                            <button type="button" class="btn">提交</button>
+                        </div>
                     </form>
+                </div>
+
+                <!-- 播放按鈕 -->
+                <div class="audio_btn d-none">
+                    <img  class="" src="img/audio_icon_mute.svg" alt="" />
+                    <img class="d-none" src="img/audio_icon_play.svg" alt="" />
                 </div>
             </div>
         </div>
@@ -249,6 +304,7 @@
                 <img class="letsgo d-none" src="img/scene_1_letsgo.svg" alt="" />
             </div>
         </div>
+
         <!-- 過場黑幕 -->
         <div class="trans_scene s_default d-none"></div>
         <!-- 過場黑幕 500s-->

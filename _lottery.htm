@@ -2,51 +2,48 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" type="image/png" sizes="16x16" href="img/scene_5_sushi.svg" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="/fontawesome/css/all.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <title>版型</title>
     </head>
-    <body>
+    <body class="lottery_page">
         <!-- warpper 開始 -->
         <div class="wrapper">
+            
             <!-- container 開始 -->
             <div class="container">
                 <!-- 表單 -->
                 <div class="lottery">
-              
-                   <div class="col-12 contact_form">
-                  
-                    <form>
-                        <p class="form_header">感謝完成任務
+                   <form>
+                        <h4 class="form_header">感謝完成任務
                             留下您的姓名與手機號碼
                             就有機會獲得爭鮮迴轉壽司300元餐券唷
-                            ※一組號碼限參加一次</p>
+                            ※一組號碼限參加一次</h4>
                         <div class="form-group row">
-                            <label for="name" class="col-5 col-form-label">姓名(必填)</label>
+                            <label for="name" class="col-5">姓名(必填)</label>
                             <div class="col-7">
                                 <input type="text" class="form-control" id="name" placeholder="請使用全名以供辨識"/>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="phoneNumber" class="col-5 col-form-label">手機號碼(必填)</label>
+                            <label for="phoneNumber" class="col-5">手機號碼(必填)</label>
                             <div class="col-7">
                                 <input type="text" class="form-control" id="phoneNumber" placeholder="一組號碼限參加一次"/>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-5 col-form-label">電子信箱(選填)</label>
+                            <label for="email" class="col-5">電子信箱(選填)</label>
                             <div class="col-7">
                                 <input type="text" class="form-control" id="email" />
                             </div>
                         </div>
 
                         <div class="form-group row privacy_policy">
-                            <label for="" class="col-4 col-form-label">個人資料保護法聲明條款</label>
+                            <label for="" class="col-4">個人資料保護法聲明條款</label>
                             <div class=" col-8">
                                 <p>邊已作在營，是奇式少百愛變展著，神裡結沒；高大積開習去這中，小女從去馬要才背要，小水為度學家中車心青！爸管條後友起子人？
                                     女東觀極成臺、官局活拉在推土於去明人可、產外人他、空我極服。再日重引常生個的縣要飛證心花青……完速現管所活證？民官衣遊和適過有們遊但士，喜理下細車易：勢樹以……藝影兒他達美際金月！於畫說三兩金場畫卻獎地就體境紅紅友盡往幾由命就條政如產作十先上滿。
@@ -68,7 +65,7 @@
                         </div>
 
                         <div class="form-group row verification">
-                            <label for="verifiCode">輸入驗證碼</label>
+                            <label for="verif iCode">輸入驗證碼</label>
                             <div class="input_box">
                                 <input type="text" class="form-control" id="verifiCode" />
                             </div>
@@ -82,38 +79,9 @@
                             <button type="button" class="btn">提交</button>
                         </div>
                     </form>
-                    <!-- <form class="row w-80">
-                        <h6>這邊是表單，有很多input這邊是表單，有很多input這邊是表單，有很多input這邊是表單，有很多input這邊是表單，有很多input</h6>
-                        <div class="col-4">姓名(必填)</div>
-                        <div class="col-8">
-                            <input type="" id="" />
-                        </div>
-
-                        <div class="col-4">手機號碼(必填)</div>
-                        <div class="col-8">
-                            <input type="" id="" />
-                        </div> 
-                        
-                        <div class="col-4">電子信箱(必填)</div>
-                        <div class="col-8">
-                            <input type="" id="" />
-                        </div> 
-                        
-                        <div class="col-4">還有很多話想說的話這邊寫還有很多話想說的話這邊寫</div>
-                        <div class="col-8">
-                            <textarea type="text" id=""></textarea>
-                        </div>
-
-                        <div class="col-12">
-                            <input type="checkbox" id="" />
-                            <p>我同意所有我同意所有條款條款</p>
-                        </div>
-
-
-                    
-                    </form> -->
+                </div>
             </div>
-            </div>
+        
         </div>
         <!-- warpper 結束 -->
 
@@ -125,14 +93,5 @@
         <audio data-name="BGM-speed" src="audio/BGM-speed.mp3" alt=""></audio>
         <audio data-name="BGM-happy" src="audio/BGM-happy.mp3" alt=""></audio>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="js/common.js"></script>
-        <script>
-            $(function () {
-                $(".sushi_scene .btn_box").on("click",function () {
-                    dNone(".sushi_scene");
-                    dShow(".lottery")
-                })
-            });
-        </script>
     </body>
 </html>
